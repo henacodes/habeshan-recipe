@@ -1,6 +1,17 @@
 <script>
   import { SearchIcon } from "svelte-feather-icons";
   import Category from "./Category.svelte";
+  import Meal from "./Meal.svelte";
+
+  const categories = [
+    "breakfast",
+    "chicken",
+    "seafood",
+    "dessert",
+    "vegan",
+    "beef",
+    "starter",
+  ];
 </script>
 
 <div class="feed bg-white flex-[0.8] px-6 pt-5">
@@ -19,7 +30,18 @@
       />
     </div>
   </div>
-  <div>
-    <Category />
+  <div class="flex items-center w-full justify-between mt-5">
+    {#each categories as cat}
+      <Category type={cat} />
+    {/each}
+  </div>
+  <div class="meals grid grid-cols-4 gap-5 mt-5">
+    <Meal />
+    <Meal />
+    <Meal />
+    <Meal />
+    <Meal />
+    <Meal />
+    <Meal />
   </div>
 </div>
