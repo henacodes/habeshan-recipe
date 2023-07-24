@@ -1,5 +1,4 @@
 <script>
-  import { scale } from "svelte/transition";
   export let type;
 </script>
 
