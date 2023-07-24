@@ -40,7 +40,6 @@
     </div>
   </div>
   <div>
-    <h1 class="text-3xl font-bold mb-4">{meal.strMeal}</h1>
     <p class="text-lg mb-4">
       <span class="font-bold">Category:</span>
       {meal.strCategory}
