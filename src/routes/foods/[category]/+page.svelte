@@ -38,8 +38,12 @@
   {/each}
 </div>
 <div class="meals grid grid-cols-4 gap-5 mt-5 pb-7 px-5">
-  {#each data.meals as meal}
-    <Meal mealName={meal.strMeal} mealThumb={meal.strMealThumb} />
+  {#each data.meals as meal (meal.idMeal)}
+    <Meal
+      mealName={meal.strMeal}
+      mealThumb={meal.strMealThumb}
+      id={meal.idMeal}
+    />
   {/each}
 </div>
 
