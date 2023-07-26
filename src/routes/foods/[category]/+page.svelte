@@ -1,9 +1,12 @@
 <script>
+  import { goto } from "$app/navigation";
   import { SearchIcon } from "svelte-feather-icons";
   import Category from "../../../lib/Category.svelte";
   import Meal from "../../../lib/Meal.svelte";
 
   export let data;
+
+  let searchQuery = "";
 
   const categories = [
     "breakfast",
@@ -14,22 +17,32 @@
     "beef",
     "starter",
   ];
+
+  const handleSubmit = (e) => {
+    console.log("submit ");
+    goto(`/foods/search?query=${searchQuery}`);
+  };
 </script>
 
 <div class="feed-top flex items-center justify-between">
   <p class="text-dark-blue font-extrabold text-2xl">
     Discover mom's creativity
   </p>
-  <div class="search-form flex items-center">
+  <form
+    class="search-form flex items-center"
+    on:submit|preventDefault={handleSubmit}
+  >
     <SearchIcon class="mr-[-30px] relative z-10" size="20" />
     <input
+      bind:value={searchQuery}
       type="text"
       name=""
       id=""
       class=" relative w-[40vw] z-1 px-8 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded-md focus:outline-none focus:ring-green-color focus:border-green-color"
       placeholder="search recipes"
     />
-  </div>
+    <button class=" " type="submit">search</button>
+  </form>
 </div>
 
 <div class="flex items-center w-full justify-between mt-5">
