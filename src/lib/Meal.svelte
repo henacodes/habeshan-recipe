@@ -1,10 +1,12 @@
 <script>
   import { onMount } from "svelte";
   import { page } from "$app/stores";
-  let param = "";
+  export let param = "hah";
   onMount(() => {
     const unsubscribe = page.subscribe((value) => {
-      param = value.params.category;
+      if (!param) {
+        param = value.params.category;
+      }
     });
     return () => {
       unsubscribe();
@@ -16,7 +18,7 @@
   export let mealThumb;
 </script>
 
-<a href={`/foods/${param}/${id}`}>
+<a href={`/foods/${param}/${id}`} class="  h-[220px]">
   <div
     class="meal h-[220px] rounded m-2 hover:scale-105 transition duration-300 ease-in-out cursor-pointer hover:shadow-2xl shadow-md hover:shadow-green-color/20"
   >

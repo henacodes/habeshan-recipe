@@ -1,8 +1,6 @@
 <script>
   import Meal from "$lib/Meal.svelte";
   export let data;
-
-  $: console.log(data);
 </script>
 
 <div>
@@ -15,6 +13,7 @@
         mealName={meal.strMeal}
         mealThumb={meal.strMealThumb}
         id={meal.idMeal}
+        param={meal.strCategory}
       />
     {/each}
   </div>

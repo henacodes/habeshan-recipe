@@ -5,7 +5,6 @@ export async function load({ fetch, url }) {
   );
 
   const data = await res.json();
-  console.log(data.meals);
   return {
     meals: data.meals,
     query,
