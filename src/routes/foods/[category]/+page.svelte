@@ -29,7 +29,6 @@
     <p class="text-dark-blue font-extrabold text-md">
       Discover mom's creativity
     </p>
-    <p class="menu-icon hidden"><MenuIcon /></p>
   </div>
   <form
     class="search-form flex items-center"
