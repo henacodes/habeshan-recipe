@@ -17,7 +17,8 @@
     browserLocalPersistence,
     signOut,
   } from "firebase/auth";
-  import { auth } from "./firebase/firebase.js";
+  import { collection, doc, setDoc } from "firebase/firestore";
+  import { auth, db } from "./firebase/firebase.js";
   let route = "";
   const assignClass = (menu, value) => {
     if (menu == value) {
@@ -32,6 +33,18 @@
 
       // Perform Google sign-in
       const res = await signInWithPopup(auth, new GoogleAuthProvider());
+
+      // Access user information from the response
+      const { user } = res;
+
+      // Create a user document in the "users" collection
+      const userDocRef = doc(db, "users", user.uid);
+      const userData = {
+        name: user.displayName,
+        email: user.email,
+        // Add any additional user data you want to store
+      };
+      await setDoc(userDocRef, userData);
       console.log(res);
     } catch (error) {
       console.error(error);

@@ -8,16 +8,19 @@
 
   onMount(async () => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      authStore.update((prev) => {
-        return {
-          ...prev,
-          user: {
-            name: user.displayName,
-            email: user.email,
-            profilePic: user.photoURL,
-          },
-        };
-      });
+      if (user) {
+        authStore.update((prev) => {
+          return {
+            ...prev,
+            user: {
+              name: user.displayName,
+              email: user.email,
+              profilePic: user.photoURL,
+              uid: user.uid,
+            },
+          };
+        });
+      }
     });
     authStore.subscribe((user) => console.log(user));
     return unsubscribe;
