@@ -17,7 +17,7 @@
     browserLocalPersistence,
     signOut,
   } from "firebase/auth";
-  import { collection, doc, setDoc } from "firebase/firestore";
+  import { collection, doc, setDoc, getDoc } from "firebase/firestore";
   import { auth, db } from "./firebase/firebase.js";
   let route = "";
   const assignClass = (menu, value) => {
@@ -37,15 +37,30 @@
       // Access user information from the response
       const { user } = res;
 
-      // Create a user document in the "users" collection
-      const userDocRef = doc(db, "users", user.uid);
-      const userData = {
-        name: user.displayName,
-        email: user.email,
-        // Add any additional user data you want to store
-      };
-      await setDoc(userDocRef, userData);
-      console.log(res);
+      // Assuming you have the document reference
+      const docRef = doc(db, "users", user.uid);
+
+      // Fetch the document
+      try {
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          console.log("document exists", data);
+        } else {
+          console.log("document doesn't exist");
+          // Create a user document in the "users" collection
+          const userDocRef = doc(db, "users", user.uid);
+          const userData = {
+            name: user.displayName,
+            email: user.email,
+            favourites: [],
+            // Add any additional user data you want to store
+          };
+          await setDoc(userDocRef, userData);
+        }
+      } catch (error) {
+        console.error("Error fetching document:", error);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -75,7 +90,7 @@
   <div>
     <div class="sidebar-top bg-dark-blue p-5">
       <p class=" text-green-color font-bold text-3xl">
-        Mad<span class="text-white-grey">bet</span>
+        E-<span class="text-white-grey">Kushna</span>
       </p>
       <p class=" text-slate-400">A home for creative moms</p>
       {#if !$authStore?.user}
@@ -156,3 +171,11 @@
     </div>
   {/if}
 </div>
+
+<style>
+  @media (max-width: 1000px) {
+    .sidebar {
+      display: none;
+    }
+  }
+</style>

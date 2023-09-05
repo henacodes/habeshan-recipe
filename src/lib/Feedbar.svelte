@@ -1,3 +1,6 @@
-<div class="feed bg-white flex-[0.8] px-6 pt-5">
+<div class="feed flex-[0.8] bg-white px-6 pt-5">
   <slot />
 </div>
+
+<style>
+</style>
