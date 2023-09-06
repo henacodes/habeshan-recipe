@@ -8,7 +8,7 @@ Here is the [demo](https://madbet-recipe.vercel.app/).
 
 ## Try it yourself
 
-If you want to contribute
+If you want to try it yourself on your machine
 
 ```bash
 # clone the project into you local machine
