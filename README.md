@@ -4,9 +4,7 @@ Whether you're a seasoned cook or just starting out in the kitchen, E-Kushna has
 
 Here is the [demo](https://madbet-recipe.vercel.app/).
 
-```markdown
-![Screeshot](https://i.ibb.co/M50DRfY/bixfy.jpg)
-```
+<img src="https://i.ibb.co/M50DRfY/bixfy.jpg"  />
 
 ## Try it yourself
 
