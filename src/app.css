@@ -8,20 +8,32 @@
   box-sizing: border-box;
 }
 
-/* Set the scrollbar width and background color */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* 
 ::-webkit-scrollbar {
   width: 10px;
   background-color: #fff;
 }
 
-/* Set the thumb color and roundness */
+
 ::-webkit-scrollbar-thumb {
   background-color: #b7f8d2;
   border-radius: 5px;
 }
 
-/* Set the thumb color and roundness for the hover state */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #86c9a2;
   border-radius: 5px;
 }
+ */

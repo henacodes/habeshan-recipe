@@ -20,15 +20,17 @@
 
 <div class=" h-[95vh] overflow-auto">
   <p class="font-bold text-2xl">{meal.strMeal}</p>
-  <div class="top flex mt-5">
+  <div class="top flex flex-col mt-5">
     <img
       src={meal.strMealThumb}
       alt={meal.strMeal}
-      class="w-[50vw] h-[60vh] object-cover rounded-md"
+      class="w-[100%] h-[60vh] object-cover rounded-md"
     />
     <div>
       <h1 class=" mx-7">Ingredients</h1>
-      <div class="grid grid-cols-3 p-5">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5"
+      >
         {#each ingredients as ing}
           <Ingredient
             name={ing.name}

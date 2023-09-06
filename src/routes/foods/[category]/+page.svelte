@@ -50,11 +50,12 @@
   </form>
 </div>
 
-<div class="flex categories items-center w-full justify-between mt-5">
+<div class="flex categories  items-center w-[full] justify-between mt-5">
   {#each categories as cat}
     <Category type={cat} />
   {/each}
 </div>
+
 <div>
   <span />
   <span />
@@ -78,14 +79,18 @@
   .meals {
     overflow-y: auto;
     height: 32rem;
+
   }
 
   @media (max-width: 700px) {
     .categories {
-      display: none;
+      overflow-x:auto;
+      padding:0 1.2rem;
     }
+     
+  
     .meals {
-      height: 40rem;
+      height: 36rem;
     }
     .feed-top {
       flex-direction: column;
