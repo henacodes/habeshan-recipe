@@ -15,6 +15,7 @@
     Ethiopian dishes to modern interpretations, you'll find something to satisfy
     your taste buds.
   </p>
+  <img src="https://i.ibb.co/M50DRfY/bixfy.jpg" />
   <p class="mb-4">
     Visit the <a
       href="https://github.com/henacodes/habeshan-recipe"

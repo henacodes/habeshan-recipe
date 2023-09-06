@@ -1,33 +1,30 @@
-# create-svelte
+# E-KUSHNA
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Whether you're a seasoned cook or just starting out in the kitchen, E-Kushna has a wide range of recipes to explore and try out. From traditional Ethiopian dishes to modern interpretations, you'll find something to satisfy your taste buds.
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+Here is the [demo](https://madbet-recipe.vercel.app/).
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```markdown
+![Screeshot](https://i.ibb.co/M50DRfY/bixfy.jpg)
 ```
 
-## Developing
+## Try it yourself
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+If you want to contribute
 
 ```bash
+# clone the project into you local machine
+git clone https://github.com/henacodes/habeshan-recipe.git
+
+# navigate to the folder
+cd habeshan-recipe
+
+# install dependencies
+npm install
+
+# run local server
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
 
 ## Building
 
@@ -55,4 +52,8 @@ To publish your library to [npm](https://www.npmjs.com):
 
 ```bash
 npm publish
+```
+
+```
+
 ```
