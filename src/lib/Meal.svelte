@@ -24,7 +24,7 @@
 
   const addToFavs = async () => {
     console.log($authStore.user.uid);
-    const docRef = doc(db, "user", $authStore.user.uid);
+    const docRef = doc(db, "users", $authStore.user.uid);
     try {
       const docSnap = await getDoc(docRef);
       console.log(docSnap);
@@ -32,11 +32,10 @@
         const currentData = docSnap.data();
 
         // Perform any necessary modifications to the currentData object
-
         // Update the document with the modified data
         await updateDoc(docRef, {
           ...currentData,
-          favourites: currentData.favourites.push(id),
+          favourites: [...currentData.favourites, id],
         });
         console.log("Document updated successfully");
       } else {

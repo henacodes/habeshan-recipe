@@ -143,15 +143,7 @@
                 <span>Favorites</span>
               </div></a
             >
-            <a href="/create">
-              <div
-                class={"flex items-center my-1 p-4 rounded-xl  hover:bg-slate-200 transition duration-300 ease-in-out " +
-                  assignClass("create", route)}
-              >
-                <PlusSquareIcon size="20" class=" text-dark-blue mr-4" />
-                <span>Create</span>
-              </div>
-            </a>
+
             <a href="/about">
               <div
                 class={"flex items-center my-1 p-4 rounded-xl  hover:bg-slate-200 transition duration-300 ease-in-out " +

@@ -25,13 +25,12 @@
               email: user.email,
               profilePic: user.photoURL,
               uid: user.uid,
-              favourites: userDoc?.favourites,
+              favourites: [],
             },
           };
         });
       }
     });
-    authStore.subscribe((user) => console.log(user));
 
     return unsubscribe;
   });
